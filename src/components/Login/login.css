@@ -4,6 +4,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: url('./image-background.jpg');
 }
 
 .container-shadow {
@@ -31,10 +32,16 @@
     margin-bottom: 0.5rem;
 }
 
-#formBasicEmail {
+#formBasicEmail, #formBasicPassword {
     background-color: #181a1b;
 }
 
-#formBasicPassword {
-    background-color: #181a1b;
+.ancors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error {
+    color: red;
 }

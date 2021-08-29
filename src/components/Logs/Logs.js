@@ -12,7 +12,7 @@ let logs = [log1, log2, log3, log4, log5];
 
 const Logs = () => {
     return(
-        <div id='table'>
+        <div id='table' className='container-shadow'>
             <Table striped bordered hover>
                     <thead>
                         <TableHead/>
