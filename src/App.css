@@ -1,0 +1,9 @@
+.app {
+    height: 100vh;
+}
+
+div,h1,h2,p,span,th,td,input {
+    color: #d1cdc7;
+    background-color: #181a1b;
+    line-height: 1.5;
+}

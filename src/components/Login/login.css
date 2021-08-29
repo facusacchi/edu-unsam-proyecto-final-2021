@@ -22,10 +22,19 @@
 
 #login-title {
     font-size: xx-large;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+#formBasicEmail {
+    background-color: #181a1b;
+}
+
+#formBasicPassword {
+    background-color: #181a1b;
 }

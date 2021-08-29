@@ -6,17 +6,20 @@ import Menu from './components/Menu/Menu';
 import Logs from './components/Logs/Logs';
 import Home from './components/Home/Home';
 import Contacto from './components/Contacto/Contacto';
+import Registrar from './components/Registrar/Registrar';
 
 const App = () => {
   return(
-    <BrowserRouter>
-      <Route path="/(.+)" component={Menu} />
-      <Route exact={true} path="/" component={Login} />
-      <Route path="/home" component={Home} />
-      <Route path="/logs" component={Logs} />
-      <Route path="/contacto" component={Contacto} />
-      {/* <Route path="/log/:id" component={Log} /> */}
-    </BrowserRouter>
+    <div className='app'>
+      <BrowserRouter>
+        <Route path="/(.+)" component={Menu} />
+        <Route exact={true} path="/" component={Login} />
+        <Route exact path={"/home"} component={Home}/>
+        <Route exact path={"/contacto"} component={Contacto}/>
+        <Route exact path={"/logs"} component={Logs}/>
+        <Route exact path={"/registrar"} component={Registrar}/>
+      </BrowserRouter>
+    </div>
   )
 }
 

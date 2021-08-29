@@ -13,8 +13,9 @@ const Login = ({history}) => {
     const [password, setPassword] = useState('');
     const [datosIncorrectos, setDatosIncorrectos] = useState(false);
     
-    const alCambiarValorDeUsuario = async (event) => {
-        await setUsuario(event.target.value);
+    const alCambiarValorDeUsuario = (event) => {
+        console.log(event.target.value);
+        setUsuario(event.target.value);     
         console.log(usuario);
     }
 
@@ -24,14 +25,7 @@ const Login = ({history}) => {
     }
 
     const validar = () => {
-        history.push(`/home`);
-        /* if(mockUsers.any(u => u.user === user && u.pssw === pssw)) {
-            history.push(`/home`);
-        } else {
-            setDatosIncorrectos(true);
-        } */
-
-        //(mockUsers.any(u => u.user === user && u.pssw === pssw) ? history.push(`/home`) : setDatosIncorrectos(true));
+        (mockUsers.some(u => u.user === usuario && u.pssw === password) ? history.push(`/home`) : setDatosIncorrectos(true));
     }
 
     return(
@@ -45,13 +39,13 @@ const Login = ({history}) => {
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Usuario</Form.Label>
                                             {/* <Form.Control type="text" placeholder="Ingresar usuario" value={usuario} onChange={(event) => alCambiarValordeUsuario(event)}/> */}
-                                            <Form.Control type="text" placeholder="Ingresar usuario" onChange={(event) => alCambiarValorDeUsuario(event)}/>
+                                            <Form.Control type="text" placeholder="Ingresar usuario" onChange={(event) => setUsuario(event.target.value)}/>
                                         </Form.Group>
 
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
                                             <Form.Label>Contraseña</Form.Label>
-                                            <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => alCambiarValorDePassword(event)}/>
-                                            
+                                            {/* <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => alCambiarValorDePassword(event)}/> */}
+                                            <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => setPassword(event.target.value)}/>
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                             <Form.Check type="checkbox" label="Check me out" variant="warning" />
@@ -60,8 +54,9 @@ const Login = ({history}) => {
                                                 Nunca compartiremos sus datos con nadie más.
                                         </Form.Text>
                                         <div className='button-container'>
-                                            <Button className='primary-button-login' variant="primary" type="submit">Ingresar</Button>
+                                            <Button className='primary-button-login' variant="primary" onClick={validar}>Ingresar</Button>
                                         </div>
+                                        <a href='/registrarse'>Olvide mi usuario o contraseña</a>
                                         {datosIncorrectos && <div>Usuario o contraseña invalidos</div>}
                                     </Form>
                             </Card.Body>
