@@ -13,7 +13,6 @@ const Menu = () => {
                   <Nav className="mr-auto">
                     <Nav.Link to={"/home"} as={Link} >Home</Nav.Link>
                     <Nav.Link to={"/logs"} as={Link}>Logs</Nav.Link>
-                    <Nav.Link to={"/informacion"} as={Link}>Sobre Appcess</Nav.Link>
                     <Nav.Link to={"/contacto"} as={Link}>Contacto</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
