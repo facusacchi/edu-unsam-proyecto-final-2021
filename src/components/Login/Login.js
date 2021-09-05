@@ -12,17 +12,6 @@ const Login = ({history}) => {
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
     const [datosIncorrectos, setDatosIncorrectos] = useState(false);
-    
-    const alCambiarValorDeUsuario = (event) => {
-        console.log(event.target.value);
-        setUsuario(event.target.value);     
-        console.log(usuario);
-    }
-
-    const alCambiarValorDePassword = (event) => {
-        setPassword(event.target.value)
-        console.log(password);
-    }
 
     const validar = () => {
         (mockUsers.some(u => u.user === usuario && u.pssw === password) ? history.push(`/home`) : setDatosIncorrectos(true));
@@ -38,13 +27,11 @@ const Login = ({history}) => {
                                     <Form>
                                         <Form.Group className="mb-3" controlId="formBasicEmail">
                                             <Form.Label>Usuario</Form.Label>
-                                            {/* <Form.Control type="text" placeholder="Ingresar usuario" value={usuario} onChange={(event) => alCambiarValordeUsuario(event)}/> */}
                                             <Form.Control type="text" placeholder="Ingresar usuario" onChange={(event) => setUsuario(event.target.value)}/>
                                         </Form.Group>
 
                                         <Form.Group className="mb-3" controlId="formBasicPassword">
                                             <Form.Label>Contraseña</Form.Label>
-                                            {/* <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => alCambiarValorDePassword(event)}/> */}
                                             <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => setPassword(event.target.value)}/>
                                         </Form.Group>
                                         <Form.Group className="mb-3" controlId="formBasicCheckbox">

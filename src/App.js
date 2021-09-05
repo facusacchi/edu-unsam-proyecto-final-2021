@@ -7,6 +7,7 @@ import Logs from './components/Logs/Logs';
 import Home from './components/Home/Home';
 import Contacto from './components/Contacto/Contacto';
 import Registrar from './components/Registrar/Registrar';
+import Informacion from './components/Informacion/Informacion';
 
 const App = () => {
   return(
@@ -17,6 +18,7 @@ const App = () => {
         <Route exact path={"/home"} component={Home}/>
         <Route exact path={"/contacto"} component={Contacto}/>
         <Route exact path={"/logs"} component={Logs}/>
+        <Route exact path={"/informacion"} component={Informacion}/>
         <Route exact path={"/registrarse"} component={Registrar}/>
       </BrowserRouter>
     </div>
