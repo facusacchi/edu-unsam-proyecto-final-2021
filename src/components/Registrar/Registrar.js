@@ -4,7 +4,7 @@ import './registrar.css';
 
 const Registrar = () => {
     return (
-        <Card className='card'>
+        <Card className='card-reg'>
             <Card.Body>
                 <Card.Title>Registrarse</Card.Title>
                 <Form>

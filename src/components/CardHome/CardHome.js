@@ -5,7 +5,7 @@ import './cardHome.css';
 const CardHome = ({title, text, imgPath}) => {
 
     return(
-        <Card style={{ width: '18rem' }}>
+        <Card className='home-card' style={{ width: '18rem' }}>
             <Card.Img className='img' variant="top" src={imgPath} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
