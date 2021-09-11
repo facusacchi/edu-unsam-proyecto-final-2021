@@ -25,18 +25,18 @@ const Login = ({history}) => {
                             <Card.Body>
                                 <Card.Title id='login-title'>Login</Card.Title>
                                     <Form>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Group className="mb-3" controlId="form-control">
                                             <Form.Label>Usuario</Form.Label>
                                             <Form.Control type="text" placeholder="Ingresar usuario" onChange={(event) => setUsuario(event.target.value)}/>
                                         </Form.Group>
 
-                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Group className="mb-3" controlId="form-control">
                                             <Form.Label>Contraseña</Form.Label>
                                             <Form.Control type="password" placeholder="Ingresar contraseña" value={password} onChange={(event) => setPassword(event.target.value)}/>
                                         </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                             <Form.Check type="checkbox" label="Check me out" variant="warning" />
-                                        </Form.Group>
+                                        </Form.Group> */}
                                         <Form.Text id='login-desc' className="text-muted">
                                                 Nunca compartiremos sus datos con nadie más.
                                         </Form.Text>

@@ -8,23 +8,45 @@ const Registrar = () => {
             <Card.Body>
                 <Card.Title>Registrarse</Card.Title>
                 <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Usuario</Form.Label>
+                        <Form.Control type="text" placeholder="Crear usuario" />
                         <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                            Nunca compartiremos sus datos con nadie más.
                         </Form.Text>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control type="password" placeholder="Crear contraseña" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Repetir contraseña</Form.Label>
+                        <Form.Control type="password" placeholder="Repetir contraseña" />
                     </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Ingresar email" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Repetir email</Form.Label>
+                        <Form.Control type="email" placeholder="Repetir email" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="form-control">
+                        <Form.Label>Número de telefono</Form.Label>
+                        <Form.Control type="text" placeholder="Ingresar número de telefono" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                        <Form.Check type="checkbox" label="Recibir notificacion por mail" />
+                    </Form.Group>
+
                     <Button variant="primary" type="submit">
-                        Submit
+                        Registrar
                     </Button>
                 </Form>
             </Card.Body>

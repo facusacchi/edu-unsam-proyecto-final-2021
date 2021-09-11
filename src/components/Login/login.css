@@ -32,11 +32,6 @@
     margin-bottom: 0.5rem;
 }
 
-#formBasicEmail, #formBasicPassword {
-    background-color: #181a1b;
-    color: #d1cdc7;
-}
-
 .ancors {
     display: flex;
     flex-direction: column;
