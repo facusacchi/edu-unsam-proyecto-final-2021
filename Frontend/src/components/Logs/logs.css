@@ -1,7 +1,8 @@
 #table {
     max-width: 90%;
     display: flex;
-    margin: 3rem;
+    flex-direction: column;
+    margin: 1rem 3rem;
 }
 
 .container-shadow {
@@ -10,6 +11,19 @@
     box-shadow: 8px 16px 32px rgb(0 0 0 / 50%);
 }
 
-.table {
-    
+.filters-form {
+    width: 90%;
+    margin: 1rem 3rem;
+}
+
+.button-col {
+    max-width: 6rem;
+}
+
+.dropdown-toggle {
+    border-color: #d1cdc7;
+}
+
+.export-button {
+    width: 90%;
 }
