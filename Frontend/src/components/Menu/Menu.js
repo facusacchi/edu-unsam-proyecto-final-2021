@@ -1,24 +1,40 @@
 import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './menu.css';
+import "./menu.css";
 
 const Menu = () => {
-    return (
-        <Navbar collapseOnSelect bg="dark" variant={"dark"} expand="md">
-              <Container>
-                <Navbar.Brand>Appcess</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="mr-auto">
-                    <Nav.Link to={"/home"} as={Link} >Home</Nav.Link>
-                    <Nav.Link to={"/logs"} as={Link}>Logs</Nav.Link>
-                    <Nav.Link to={"/contacto"} as={Link}>Contacto</Nav.Link>
-                  </Nav>
-                </Navbar.Collapse>
-              </Container>
-          </Navbar>
-    );
-}
+  return (
+      <Navbar collapseOnSelect bg="dark" variant={"dark"} expand="md">
+        <Container>
+          <svg
+            class="bi bi-broadcast icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+          </svg>
+          <Navbar.Brand>Appcess</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link to={"/home"} as={Link}>
+                Home
+              </Nav.Link>
+              <Nav.Link to={"/logs"} as={Link}>
+                Logs
+              </Nav.Link>
+              <Nav.Link to={"/contacto"} as={Link}>
+                Contacto
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar> 
+  );
+};
 
 export default Menu;
