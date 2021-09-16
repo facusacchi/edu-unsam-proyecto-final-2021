@@ -19,3 +19,12 @@ class Usuario {
 	String password
 	String telefono
 }
+
+class Administrador extends Usuario {
+	
+}
+
+@Accessors
+class Supervisor extends Usuario {
+	boolean habilitado
+}

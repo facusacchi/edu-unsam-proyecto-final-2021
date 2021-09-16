@@ -22,7 +22,11 @@ class ControllerLogs {
 //	}
 	
 	@Put("/logs/filtro")
-	def Result usuarioVuelo(@Body String body) {
-		ok(RepoLog.instance.getLogsFiltrados(body.fromJson(Filtro)).toJson)
+	def Result logsFiltrados(@Body String body) {
+		try {
+			ok(RepoLog.instance.getLogsFiltrados(body.fromJson(Filtro)).toJson)
+		} catch (Exception e) {
+			internalServerError(e.message)
+		}
 	}
 }

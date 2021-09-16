@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Request;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.uqbar.xtrest.api.Result;
 import org.uqbar.xtrest.api.annotation.Body;
@@ -24,8 +25,19 @@ public class ControllerLogs extends ResultFactory {
   private JSONUtils _jSONUtils = new JSONUtils();
   
   @Put("/logs/filtro")
-  public Result usuarioVuelo(@Body final String body, final String target, final Request baseRequest, final HttpServletRequest request, final HttpServletResponse response) {
-    return ResultFactory.ok(this._jSONUtils.toJson(RepoLog.getInstance().getLogsFiltrados(this._jSONUtils.<Filtro>fromJson(body, Filtro.class))));
+  public Result logsFiltrados(@Body final String body, final String target, final Request baseRequest, final HttpServletRequest request, final HttpServletResponse response) {
+    Result _xtrycatchfinallyexpression = null;
+    try {
+      _xtrycatchfinallyexpression = ResultFactory.ok(this._jSONUtils.toJson(RepoLog.getInstance().getLogsFiltrados(this._jSONUtils.<Filtro>fromJson(body, Filtro.class))));
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        _xtrycatchfinallyexpression = ResultFactory.internalServerError(e.getMessage());
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    return _xtrycatchfinallyexpression;
   }
   
   public void handle(final String target, final Request baseRequest, final HttpServletRequest request, final HttpServletResponse response) throws IOException, ServletException {
@@ -41,7 +53,7 @@ public class ControllerLogs extends ResultFactory {
             // set default content type (it can be overridden during next call)
             response.setContentType("application/json");
     		
-    	    Result result = usuarioVuelo(body, target, baseRequest, request, response);
+    	    Result result = logsFiltrados(body, target, baseRequest, request, response);
     	    result.process(response);
     	    
     		response.addHeader("Access-Control-Allow-Origin", "*");
