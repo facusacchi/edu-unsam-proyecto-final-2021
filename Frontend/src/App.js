@@ -7,6 +7,7 @@ import Logs from "./components/Logs/Logs";
 import Home from "./components/Home/Home";
 import Contacto from "./components/Contacto/Contacto";
 import Registrar from "./components/Registrar/Registrar";
+import Retrieve from "./components/Retrieve/Retrieve";
 import React from "react";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path={"/registrarse"} component={Registrar} />
+          <Route exact path={"/recuperar"} component={Retrieve} />
           <Route component={ComponentWithNavBar}/>
         </Switch>
       </BrowserRouter>

@@ -35,7 +35,7 @@ const Registrar = () => {
             </Col>
             <Col md>
               <Form.Group className="mb-3 frm-grp" controlId="form-control">
-                <Form.Label>Número de telefono</Form.Label>
+                <Form.Label>Número de teléfono</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Ingresar número de telefono"
@@ -85,9 +85,12 @@ const Registrar = () => {
               Registrar
             </Button>
           </div>
-          <Form.Text className="text-muted frm-grp">
+          {/* <Form.Text className="text-muted frm-grp">
             Nunca compartiremos sus datos con nadie más.
-          </Form.Text>
+          </Form.Text> */}
+          <div className='frm-grp'>
+              <a href='/login'>Volver al login</a>
+            </div>
         </Form>
       </Card.Body>
     </Card>

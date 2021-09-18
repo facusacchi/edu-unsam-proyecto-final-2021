@@ -44,7 +44,7 @@ const Login = ({history}) => {
                                             <Button className='primary-button-login' variant="primary" onClick={validar}>Ingresar</Button>
                                         </div>
                                         <div className='ancors'>
-                                            <a href='/registrarse'>Olvidé mi usuario o contraseña</a> {' '}
+                                            <a href='/recuperar'>Olvidé mi usuario o contraseña</a> {' '}
                                             <a href='/registrarse'>Registrarse</a>
                                         </div>
                                         {datosIncorrectos && <div className="error">Usuario o contraseña invalidos</div>}
