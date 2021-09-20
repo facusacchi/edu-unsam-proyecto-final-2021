@@ -25,12 +25,6 @@ class RepoLog extends RepoGenerico<Log> {
 	override getEntityType() {
 		Log
 	}
-
-	def crearLog(Log t, Long id) {
-		// Agregar logica de guardado en la base que elijamos, inicialmente MySQL
-//		t.idUsuario = id
-//		ds.save(t)
-	}
 	
 	override generateWhere(CriteriaBuilder criteria, CriteriaQuery<Log> query, Root<Log> camposObjetoT, Log t) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")

@@ -70,7 +70,7 @@ abstract class RepoGenerico<T> {
 		} catch (PersistenceException e) {
 			e.printStackTrace
 			entityManager.transaction.rollback
-			throw new RuntimeException("Ocurrió un error, la operación no puede completarse", e)
+			throw new RuntimeException("Ocurrio un error, la operacion no puede completarse", e)
 		} finally {
 			entityManager?.close
 		}
@@ -87,7 +87,7 @@ abstract class RepoGenerico<T> {
 		} catch (PersistenceException e) {
 			e.printStackTrace
 			entityManager.transaction.rollback
-			throw new RuntimeException("Ocurrió un error, la operación no puede completarse", e)
+			throw new RuntimeException("Ocurrio un error, la operacion no puede completarse", e)
 		} finally {
 			entityManager?.close
 		}

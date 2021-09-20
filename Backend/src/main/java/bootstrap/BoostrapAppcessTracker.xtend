@@ -6,6 +6,13 @@ import domain.Ubicacion
 import domain.Evento
 import domain.Administrador
 import domain.Supervisor
+import repositorios.RepoUsuario
+import domain.Log
+import repositorios.RepoLog
+import javax.persistence.EntityManagerFactory
+import javax.persistence.Persistence
+import repositorios.RepoUbicacion
+import repositorios.RepoEvento
 
 class BoostrapAppcessTracker implements Bootstrap{
 	var Administrador mcabeledo
@@ -26,6 +33,7 @@ class BoostrapAppcessTracker implements Bootstrap{
 	var Evento salida
 	
 	def void inicializarUsuariosAdministradores() {
+		// Creacion de usuarios administradores
 		mcabeledo = new Administrador() => [
 			nombre = "María Claudia"
 			apellido = "Abeledo"
@@ -67,9 +75,19 @@ class BoostrapAppcessTracker implements Bootstrap{
 			apellido = "Maccarrone"
 			apodo = "cmaccarrone"
 		]
+	
+		// Carga de usuarios administradores en repositorio
+		cargaUsuario(mcabeledo)
+		cargaUsuario(bmenchon)
+		cargaUsuario(fsacchi)
+		cargaUsuario(cmaggiorano)
+		cargaUsuario(dsalamida)
+		cargaUsuario(mcuellar)
+		cargaUsuario(cmaccarrone)
 	}
 	
 	def void inicializarUsuariosSupervisores() {
+		// Creacion de usuarios supervisores
 		pepe = new Supervisor() => [
 			nombre = "Pedro"
 			apellido = "Perez"
@@ -82,6 +100,10 @@ class BoostrapAppcessTracker implements Bootstrap{
 			apodo = "habilitado"
 			habilitado = true
 		]
+		
+		// Carga de usuarios administradores en repositorio
+		cargaUsuario(pepe)
+		cargaUsuario(usuarioHabilitado)
 	}
 	
 	def void inicializarUbicaciones() {
@@ -92,6 +114,9 @@ class BoostrapAppcessTracker implements Bootstrap{
 		facultadSociales = new Ubicacion() => [
 			nombre = "Facultad Ciencias Sociales"
 		]
+		
+		cargaUbicacion(tornavias)
+		cargaUbicacion(facultadSociales)
 	}
 	
 	def void inicializarEventos() {
@@ -102,6 +127,45 @@ class BoostrapAppcessTracker implements Bootstrap{
 		salida = new Evento() => [
 			nombre = "Salida"
 		]
+		
+		cargaEvento(entrada)
+		cargaEvento(salida)
+	}
+	
+	def void cargaUsuario(Usuario usuario) {
+		val repoUsuario = RepoUsuario.instance
+		val listaUsuarios = repoUsuario.searchByExample(usuario)
+		if (listaUsuarios.isEmpty) {
+			repoUsuario.create(usuario)
+			println("Usuario " + usuario.nombre + " creada")
+		} else {
+			val zonaBD = listaUsuarios.head
+			usuario.id = zonaBD.id
+			repoUsuario.update(usuario)
+		}
+	}
+	
+	def void cargaLog(Log log) {
+		val repoLog = RepoLog.instance
+		val listaLogs = repoLog.searchByExample(log)
+		if (listaLogs.isEmpty) {
+			repoLog.create(log)
+			println("Log " + log.id + " creado")
+		} else {
+			val zonaBD = listaLogs.head
+			log.id = zonaBD.id
+			repoLog.update(log)
+		}
+	}
+	
+	def void cargaUbicacion(Ubicacion ubicacion) {
+		val repoUbicacion = RepoUbicacion.instance
+		repoUbicacion.create(ubicacion)
+	}
+	
+	def void cargaEvento(Evento evento) {
+		val repoEvento = RepoEvento.instance
+		repoEvento.create(evento)
 	}
 	
 	override isPending() {
@@ -110,6 +174,7 @@ class BoostrapAppcessTracker implements Bootstrap{
 	
 	override run() {
 		inicializarUsuariosAdministradores()
+		inicializarUsuariosSupervisores
 		inicializarUbicaciones()
 		inicializarEventos()
 	}

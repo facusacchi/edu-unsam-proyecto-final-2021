@@ -29,10 +29,6 @@ public class RepoLog extends RepoGenerico<Log> {
     return Log.class;
   }
   
-  public Object crearLog(final Log t, final Long id) {
-    return null;
-  }
-  
   public void generateWhere(final CriteriaBuilder criteria, final CriteriaQuery<Log> query, final Root<Log> camposObjetoT, final Log t) {
     throw new UnsupportedOperationException("TODO: auto-generated method stub");
   }

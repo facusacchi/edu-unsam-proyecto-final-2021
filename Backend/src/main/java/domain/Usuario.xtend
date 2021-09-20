@@ -20,10 +20,12 @@ class Usuario {
 	String telefono
 }
 
+@Entity
 class Administrador extends Usuario {
 	
 }
 
+@Entity
 @Accessors
 class Supervisor extends Usuario {
 	boolean habilitado

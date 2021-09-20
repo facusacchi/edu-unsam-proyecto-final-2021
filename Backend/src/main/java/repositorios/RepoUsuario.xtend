@@ -40,15 +40,15 @@ class RepoUsuario extends RepoGenerico<Usuario> {
 	}
 
 	override generateWhere(CriteriaBuilder criteria, CriteriaQuery<Usuario> query, Root<Usuario> camposUsuario, Usuario usuario) {
-//		if (usuario.nombre !== null) {
-//			query.where(criteria.equal(camposUsuario.get("nombre"), usuario.nombre))
-//		}
+		if (usuario.nombre !== null) {
+			query.where(criteria.equal(camposUsuario.get("nombre"), usuario.nombre))
+		}
 	}
 
 	override generateWhereId(CriteriaBuilder criteria, CriteriaQuery<Usuario> query, Root<Usuario> camposUsuario, Long id) {
-//		if (id !== null) {
-//			query.where(criteria.equal(camposUsuario.get("id"), id))
-//		}
+		if (id !== null) {
+			query.where(criteria.equal(camposUsuario.get("id"), id))
+		}
 	}
 	
 	def actualizarUsuario(Usuario usuario) {

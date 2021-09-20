@@ -2,11 +2,20 @@ package bootstrap;
 
 import domain.Administrador;
 import domain.Evento;
+import domain.Log;
 import domain.Supervisor;
 import domain.Ubicacion;
+import domain.Usuario;
+import java.util.List;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.uqbar.arena.bootstrap.Bootstrap;
+import repositorios.RepoEvento;
+import repositorios.RepoLog;
+import repositorios.RepoUbicacion;
+import repositorios.RepoUsuario;
 
 @SuppressWarnings("all")
 public class BoostrapAppcessTracker implements Bootstrap {
@@ -107,6 +116,13 @@ public class BoostrapAppcessTracker implements Bootstrap {
     };
     Administrador _doubleArrow_6 = ObjectExtensions.<Administrador>operator_doubleArrow(_administrador_6, _function_6);
     this.cmaccarrone = _doubleArrow_6;
+    this.cargaUsuario(this.mcabeledo);
+    this.cargaUsuario(this.bmenchon);
+    this.cargaUsuario(this.fsacchi);
+    this.cargaUsuario(this.cmaggiorano);
+    this.cargaUsuario(this.dsalamida);
+    this.cargaUsuario(this.mcuellar);
+    this.cargaUsuario(this.cmaccarrone);
   }
   
   public void inicializarUsuariosSupervisores() {
@@ -131,6 +147,8 @@ public class BoostrapAppcessTracker implements Bootstrap {
     };
     Supervisor _doubleArrow_1 = ObjectExtensions.<Supervisor>operator_doubleArrow(_supervisor_1, _function_1);
     this.usuarioHabilitado = _doubleArrow_1;
+    this.cargaUsuario(this.pepe);
+    this.cargaUsuario(this.usuarioHabilitado);
   }
   
   public void inicializarUbicaciones() {
@@ -150,6 +168,8 @@ public class BoostrapAppcessTracker implements Bootstrap {
     };
     Ubicacion _doubleArrow_1 = ObjectExtensions.<Ubicacion>operator_doubleArrow(_ubicacion_1, _function_1);
     this.facultadSociales = _doubleArrow_1;
+    this.cargaUbicacion(this.tornavias);
+    this.cargaUbicacion(this.facultadSociales);
   }
   
   public void inicializarEventos() {
@@ -169,6 +189,52 @@ public class BoostrapAppcessTracker implements Bootstrap {
     };
     Evento _doubleArrow_1 = ObjectExtensions.<Evento>operator_doubleArrow(_evento_1, _function_1);
     this.salida = _doubleArrow_1;
+    this.cargaEvento(this.entrada);
+    this.cargaEvento(this.salida);
+  }
+  
+  public void cargaUsuario(final Usuario usuario) {
+    final RepoUsuario repoUsuario = RepoUsuario.getInstance();
+    final List<Usuario> listaUsuarios = repoUsuario.searchByExample(usuario);
+    boolean _isEmpty = listaUsuarios.isEmpty();
+    if (_isEmpty) {
+      repoUsuario.create(usuario);
+      String _nombre = usuario.getNombre();
+      String _plus = ("Usuario " + _nombre);
+      String _plus_1 = (_plus + " creada");
+      InputOutput.<String>println(_plus_1);
+    } else {
+      final Usuario zonaBD = IterableExtensions.<Usuario>head(listaUsuarios);
+      usuario.setId(zonaBD.getId());
+      repoUsuario.update(usuario);
+    }
+  }
+  
+  public void cargaLog(final Log log) {
+    final RepoLog repoLog = RepoLog.getInstance();
+    final List<Log> listaLogs = repoLog.searchByExample(log);
+    boolean _isEmpty = listaLogs.isEmpty();
+    if (_isEmpty) {
+      repoLog.create(log);
+      Long _id = log.getId();
+      String _plus = ("Log " + _id);
+      String _plus_1 = (_plus + " creado");
+      InputOutput.<String>println(_plus_1);
+    } else {
+      final Log zonaBD = IterableExtensions.<Log>head(listaLogs);
+      log.setId(zonaBD.getId());
+      repoLog.update(log);
+    }
+  }
+  
+  public void cargaUbicacion(final Ubicacion ubicacion) {
+    final RepoUbicacion repoUbicacion = RepoUbicacion.getInstance();
+    repoUbicacion.create(ubicacion);
+  }
+  
+  public void cargaEvento(final Evento evento) {
+    final RepoEvento repoEvento = RepoEvento.getInstance();
+    repoEvento.create(evento);
   }
   
   public boolean isPending() {
@@ -177,6 +243,7 @@ public class BoostrapAppcessTracker implements Bootstrap {
   
   public void run() {
     this.inicializarUsuariosAdministradores();
+    this.inicializarUsuariosSupervisores();
     this.inicializarUbicaciones();
     this.inicializarEventos();
   }

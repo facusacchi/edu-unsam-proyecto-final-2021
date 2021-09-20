@@ -55,9 +55,17 @@ public class RepoUsuario extends RepoGenerico<Usuario> {
   }
   
   public void generateWhere(final CriteriaBuilder criteria, final CriteriaQuery<Usuario> query, final Root<Usuario> camposUsuario, final Usuario usuario) {
+    String _nombre = usuario.getNombre();
+    boolean _tripleNotEquals = (_nombre != null);
+    if (_tripleNotEquals) {
+      query.where(criteria.equal(camposUsuario.<Object>get("nombre"), usuario.getNombre()));
+    }
   }
   
   public void generateWhereId(final CriteriaBuilder criteria, final CriteriaQuery<Usuario> query, final Root<Usuario> camposUsuario, final Long id) {
+    if ((id != null)) {
+      query.where(criteria.equal(camposUsuario.<Object>get("id"), id));
+    }
   }
   
   public EntityManager actualizarUsuario(final Usuario usuario) {

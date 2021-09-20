@@ -1,11 +1,13 @@
 package domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtext.xbase.lib.Pure;
 
 @Accessors
+@Entity
 @SuppressWarnings("all")
 public class Ubicacion {
   @Id

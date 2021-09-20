@@ -106,7 +106,7 @@ public abstract class RepoGenerico<T extends Object> {
           final PersistenceException e = (PersistenceException)_t;
           e.printStackTrace();
           entityManager.getTransaction().rollback();
-          throw new RuntimeException("Ocurri� un error, la operaci�n no puede completarse", e);
+          throw new RuntimeException("Ocurrio un error, la operacion no puede completarse", e);
         } else {
           throw Exceptions.sneakyThrow(_t);
         }
@@ -139,7 +139,7 @@ public abstract class RepoGenerico<T extends Object> {
           final PersistenceException e = (PersistenceException)_t;
           e.printStackTrace();
           entityManager.getTransaction().rollback();
-          throw new RuntimeException("Ocurri� un error, la operaci�n no puede completarse", e);
+          throw new RuntimeException("Ocurrio un error, la operacion no puede completarse", e);
         } else {
           throw Exceptions.sneakyThrow(_t);
         }
