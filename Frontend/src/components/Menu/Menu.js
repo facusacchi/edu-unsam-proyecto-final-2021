@@ -8,7 +8,7 @@ const Menu = () => {
       <Navbar collapseOnSelect bg="dark" variant={"dark"} expand="md">
         <Container>
           <svg
-            class="bi bi-broadcast icon"
+            className="bi bi-broadcast icon"
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"

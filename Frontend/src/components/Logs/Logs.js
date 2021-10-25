@@ -6,8 +6,6 @@ import {
   Col,
   Form,
   FloatingLabel,
-  DropdownButton,
-  Dropdown,
 } from "react-bootstrap";
 import "./logs.css";
 
@@ -126,7 +124,7 @@ const Logs = () => {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-download"
+              className="bi bi-download"
               viewBox="0 0 16 16"
             >
               <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
@@ -174,7 +172,7 @@ const TableBody = () => {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-trash"
+            className="bi bi-trash"
             viewBox="0 0 16 16"
           >
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />

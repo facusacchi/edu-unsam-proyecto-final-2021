@@ -28,6 +28,12 @@
     width: 90%;
 }
 
+.button-col {
+    position: relative;
+}
+
 .search-button {
     margin-top: 1rem;
+    position: absolute;
+    bottom: 10px;
 }

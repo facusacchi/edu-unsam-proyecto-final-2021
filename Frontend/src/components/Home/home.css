@@ -11,6 +11,7 @@
     filter: contrast(0.5);
     border-top: 5px solid #d1cdc7;
     border-bottom: 3px solid #d1cdc7;
+    box-shadow: 5px 5px 30px 5px darkgrey;
 }
 
 .home-container {
