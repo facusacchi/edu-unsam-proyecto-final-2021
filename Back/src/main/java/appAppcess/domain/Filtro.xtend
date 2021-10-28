@@ -1,4 +1,4 @@
-package domain
+package appAppcess.domain
 
 import java.util.Date
 

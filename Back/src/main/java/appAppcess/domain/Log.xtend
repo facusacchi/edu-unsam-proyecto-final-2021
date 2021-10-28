@@ -1,10 +1,10 @@
-package domain
+package appAppcess.domain
 
-import javax.persistence.Id
-import javax.persistence.GeneratedValue
-import org.eclipse.xtend.lib.annotations.Accessors
-import javax.persistence.Entity
 import java.time.LocalDateTime
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 @Entity

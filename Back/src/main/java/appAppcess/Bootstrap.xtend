@@ -1,4 +1,6 @@
-import org.springframework.beans.factory.annotation.Autowired
+package appAppcess
+
+import org.springframework.beans.factory.annotation.Autowired	
 import repository.RepoUsuario
 import repository.RepoLog
 import domain.Usuario

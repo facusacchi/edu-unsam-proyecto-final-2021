@@ -1,4 +1,4 @@
-package domain
+package appAppcess.domain
 
 import javax.persistence.GeneratedValue	
 import javax.persistence.Id

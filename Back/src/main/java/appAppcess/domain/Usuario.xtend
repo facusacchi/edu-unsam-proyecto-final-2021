@@ -1,4 +1,4 @@
-package domain
+package appAppcess.domain
 
 import org.eclipse.xtend.lib.annotations.Accessors
 import javax.persistence.Entity
